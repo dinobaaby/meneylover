@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "534116838579",
+    "project_id": "flutter-add-b45a3",
+    "storage_bucket": "flutter-add-b45a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534116838579:android:fc3f2ce22aaf2a906cd4c6",
+        "android_client_info": {
+          "package_name": "com.example.firebaseinstagram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQeUh5quVyXIcqm7D7j6eCR4cOc7F97jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534116838579:android:2020091f877289f06cd4c6",
+        "android_client_info": {
+          "package_name": "com.example.moneylover"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQeUh5quVyXIcqm7D7j6eCR4cOc7F97jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534116838579:android:00595138f61506186cd4c6",
+        "android_client_info": {
+          "package_name": "newsapp.devh.com.newsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQeUh5quVyXIcqm7D7j6eCR4cOc7F97jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
