@@ -161,7 +161,8 @@ class AuthService {
         Map<String, dynamic> userData = userSnapshot.data() as Map<String, dynamic>;
 
         // Lấy số tiền hiện tại của người dùng
-        double currentUserMoney = userData['money'];
+        double currentUserMoney = (userData['money'] ?? 0).toDouble();
+
 
         // Cập nhật số tiền dựa vào category
         if (category == 1) {
@@ -180,10 +181,41 @@ class AuthService {
         res = 'User not found';
       }
     } catch (e) {
+      print(e.toString());
       res = e.toString();
     }
 
     return res;
+  }
+
+  Future<double> calculateTotalWithCategory1(String userId) async {
+    double total = 0;
+    try {
+      // Lấy tất cả các giao dịch có category = 1 của người dùng từ Firestore
+      QuerySnapshot transactionsSnapshot = await _firestore
+          .collection('usersc')
+          .doc(userId)
+          .collection('moneys')
+          .where('category', isEqualTo: 1)
+          .get();
+
+      // Lặp qua từng giao dịch và tính tổng giá trị
+      transactionsSnapshot.docs.forEach((transaction) {
+        // Cast result of data() to Map<String, dynamic>
+        final Map<String, dynamic>? transactionData = transaction.data() as Map<String, dynamic>?;
+
+        // Check if transactionData is not null and contains 'money' key
+        if (transactionData != null && transactionData.containsKey('money')) {
+          total -= (transactionData['money'] as double?) ?? 0; // Trừ tiền với category = 1
+        }
+      });
+
+    } catch (e) {
+      // Xử lý nếu có lỗi xảy ra
+      print('Error calculating total with category 1: $e');
+    }
+
+    return total;
   }
 
 }
